@@ -19,8 +19,9 @@ function addItemElement(text) {
 }
 
 function addItem(event) {
-  if (event.keyCode === 13) {
-    addItemElement(event.target.value);
+  // se a tecla Enter for pressionada e tiver algum conteúdo no input
+  if (event.keyCode === 13 && event.target.value.trim().length > 0) {
+    addItemElement(event.target.value.trim());
     event.target.value = '';
   }
 }
